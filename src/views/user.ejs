@@ -1,0 +1,50 @@
+<%- include ('include/header')  %>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/admin-home"> Home </a>
+</nav>
+<br>
+<br>
+<div class="container">
+    <a href="/create" class="btn btn-info">Create new user</a>
+    <br>
+    <br>
+    <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% if(data){ %>
+                <% for (var i = 0; i < data.length; i++){ %>
+                    <tr>
+                        <td><%= (i + 1)  %></td>
+                        <td><%= data[i].nombre  %></td>
+                        <td><%= data[i].email  %></td>
+                        <td><%= data[i].idRol  %></td>
+                        <td><a href="/update/<%= data[i].id %>" class="btn btn-info">Update</a>
+                            <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+
+                <%  } %>
+            <% } %>
+          
+        </tbody>
+      </table>
+</div>
+
+
+
+
+
+
+<%- include ('include/footer')  %>

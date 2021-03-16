@@ -1,0 +1,39 @@
+<%- include ('include/header')  %>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Update</a>
+
+    
+  </nav>
+  <div class="container">
+      <div class="card">
+        <div class="card-body">    
+          <form action="/car-update/<%= data.id %>" method = "POST" >
+            <div class="form-group">
+              <label for="nombre"> Nombre </label>
+              <input type="text" class="form-control" name="nombre" value="<%= data.nombre %>" >
+            </div>
+            <div class="form-group">
+              <label for="color"> Color </label>
+              <input type="text" class="form-control" name="color" value="<%= data.color %>">
+            </div>
+            <div class="form-group">
+              <label for="Año"> Año </label>
+              <input type="text" class="form-control" name="fecha" value="<%= data.fecha %>">
+            </div>
+            <div class="form-group">
+              <label for="Año"> Usuario </label>
+              <input type="text" class="form-control" name="usuario" value="<%= data.usuario %>">
+            </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+<%- include ('include/footer')  %>

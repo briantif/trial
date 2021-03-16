@@ -1,0 +1,39 @@
+<%- include ('include/header')  %>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"> Profile </a>
+</nav>
+<br>
+<br>
+<div class="container">
+
+    <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% if(data){ %>
+                <% for (var i = 0; i < data.length; i++){ %>
+                    <tr>
+                        <td><%= (i + 1)  %></td>
+                        <td><%= data[i].nombre  %></td>
+                        <td><%= data[i].edad  %></td>
+                        <td><a href="/update-profile/<%= data[i].id %>" class="btn btn-info">Update</a>
+                        </td>
+                    </tr>
+
+                <%  } %>
+            <% } %>
+          
+        </tbody>
+      </table>
+</div>
+
+
+<%- include ('include/footer')  %>

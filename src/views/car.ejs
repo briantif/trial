@@ -1,0 +1,48 @@
+<%- include ('include/header')  %>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/dealer-home"> Home </a>
+</nav>
+<br>
+<br>
+<div class="container">
+    <a href="car-create" class="btn btn-info">Create New Car</a>
+    <br>
+    <br>
+    <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Color</th>
+            <th scope="col"> Año </th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Fecha de creacion</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% if(data){ %>
+                <% for (var i = 0; i < data.length; i++){ %>
+                    <tr>
+                        <td><%= (i + 1)  %></td>
+                        <td><%= data[i].nombre  %></td>
+                        <td><%= data[i].color  %></td>
+                        <td><%= data[i].fecha  %></td>
+                        <td><%= data[i].usuario  %></td>
+                        <td><%= data[i].fecha_creacion  %></td>
+                        <td><a href="/car-update/<%= data[i].id %>" class="btn btn-info">Update</a>
+                            <a href="/car-delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+
+                <%  } %>
+            <% } %>
+          
+        </tbody>
+      </table>
+</div>
+
